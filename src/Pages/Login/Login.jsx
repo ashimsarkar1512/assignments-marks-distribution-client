@@ -78,9 +78,9 @@ const Login = () => {
                                     <button className='btn w-full text-white bg-green-600 '>Log in</button>
                                 </form>
                                 < hr className='my-5' />
-                                <span className="absolute lg:right-1/3 lg:top-[47%]  right-[15%] top-[125%]" onClick={()=>setShowPassword(!showPassword)}>
+                                <span className="absolute lg:right-1/3 lg:top-[56%]  right-[15%] top-[173%]"  onClick={()=>setShowPassword(!showPassword)}>
                              {
-                              showPassword? <FaEyeSlash className="text-white  "></FaEyeSlash>:<FaEye  className="text-white"></FaEye>
+                              showPassword? <FaEyeSlash ></FaEyeSlash>:<FaEye ></FaEye>
                              }
                             </span>
             

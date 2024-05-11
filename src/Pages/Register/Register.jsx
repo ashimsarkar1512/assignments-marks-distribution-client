@@ -71,9 +71,9 @@ const Register = () => {
                 </form>
                 </div>
 
-                <span className="absolute lg:right-1/3 lg:top-[54%]  right-[15%] top-[143%]" onClick={()=>setShowPassword(!showPassword)}>
+                <span className="absolute lg:right-1/3 lg:top-[63%]  right-[15%] top-[143%]" onClick={()=>setShowPassword(!showPassword)}>
                 {
-                   showPassword? <FaEyeSlash className="text-white  "></FaEyeSlash>:<FaEye className="text-white"></FaEye>
+                   showPassword? <FaEyeSlash ></FaEyeSlash>:<FaEye ></FaEye>
                 }
                 </span>
                 <h1 className="font-medium text-center mt-3">Do not have account ? <Link className="text-blue-500 font-semibold" to={'/login'}>log In</Link> </h1>

@@ -7,6 +7,7 @@ import Register from "../Pages/Register/Register";
 import CreateAssignment from "../Pages/CreateAssignment/CreateAssignment";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Assignments from "../Pages/Assignments/Assignments";
+import Update from "../Pages/Update/Update";
 
 const router = createBrowserRouter([
             {
@@ -32,8 +33,16 @@ const router = createBrowserRouter([
                         },
                         {
                           path:'/assignment',
-                          element:<Assignments></Assignments>
+                          element:<Assignments></Assignments>,
+                          loader:()=>fetch('http://localhost:5000/assignment')
+                          
+                        },
+                        {
+                          path:'/update/:id',
+                          element:<Update></Update>,
+                          loader:({params})=>fetch(`http://localhost:5000/assignment/${params.id}`)
                         }
+
               ]
             },
           ]);

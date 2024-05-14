@@ -40,7 +40,7 @@ const Navbar = () => {
 
 
             return (
-                        <div className="navbar container mx-auto p-6 bg-base-100 fixed z-10">
+                        <div className="navbar container mx-auto p-6 bg-base-100 fixed z-20">
                          <div className="navbar bg-base-100">
   <div className="navbar-start">
     <div className="dropdown">
@@ -85,7 +85,7 @@ const Navbar = () => {
                  </div>
                </div>
                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                 <li>my attempted assignments</li>
+                <Link to='/myAttempted'> <li><button>my attempted assignments</button></li></Link>
                  <li ><button onClick={logOut}>Logout</button></li>
                </ul>
              </div>

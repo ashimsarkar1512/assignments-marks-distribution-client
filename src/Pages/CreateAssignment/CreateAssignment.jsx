@@ -1,11 +1,19 @@
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
-
+import DatePicker from 'react-datepicker'
+import "react-datepicker/dist/react-datepicker.css"
 
 const CreateAssignment = () => {
     const {user}=useContext(AuthContext)
+    const[startDate,setStartDate]=useState(new Date())
+
+
+    const onchangeHandler=e=>{
+        console.log(e);
+        setStartDate(e)
+    }
 
           const handleCreateAssignment=event=>{
             event.preventDefault();
@@ -36,7 +44,7 @@ const CreateAssignment = () => {
                        if(data.insertedId){
                         Swal.fire({
                             title: 'success!',
-                            text: 'art and craft added successfully',
+                            text: 'Assignment created successfully',
                             icon: 'success',
                             confirmButtonText: 'Cool'
                           })
@@ -51,7 +59,7 @@ const CreateAssignment = () => {
             return (
  
                         <div className="container mx-auto px-16">
-                        <h2 className='text-center text-3xl'>ghjg </h2>
+                        <h2 className='text-center text-3xl'>Create Assignment</h2>
                         <form onSubmit={handleCreateAssignment}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="form-control">
@@ -82,7 +90,7 @@ const CreateAssignment = () => {
                                     <label className="label">
                                         <span className="label-text">Date</span>
                                     </label>
-                                    <input type="date" name="date" className="input input-bordered" />
+                                    <DatePicker selected={startDate} onChange={onchangeHandler} className="input input-bordered w-full"></DatePicker>
                                 </div>
                                
                                 <div className="form-control">

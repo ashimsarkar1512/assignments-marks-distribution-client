@@ -4,6 +4,8 @@ import Swal from "sweetalert2";
 
 
 const Assignments = () => {
+
+       
        const allAssignments=useLoaderData()
        const [items,setItems]=useState(allAssignments)
 
@@ -27,27 +29,30 @@ const Assignments = () => {
               })
               .then(res=>res.json())
               .then(data=>{
+
+                    
                      if(data.deletedCount>0){
                             Swal.fire({
                               title: "Deleted!",
                               text: "Your file has been deleted.",
                               icon: "success"
                             });
+                            const remainingUsers=items.filter(user=>user.email!==email)
+                            setItems(remainingUsers)
                     }
                   });
                         
     
-                                        const remainingUsers=items.filter(user=>user.email!==email)
-                                        setItems(remainingUsers)
+                                     
                             }
                         })
                 }
        
             return (
-                        <div className="mt-10 container mx-auto px-6 grid lg:grid-cols-3 gap-5">
+                        <div className=" container mx-auto px-6 grid lg:grid-cols-3 gap-5">
                                 
                                {
-                    allAssignments.map(item => <> <div className="card bg-base-100 shadow-xl">
+                    allAssignments.map(item => <> <div key={item._id} className="card bg-base-100 shadow-xl">
                     <figure><img src={item.image} alt="Shoes" /></figure>
                     <div className="card-body">
                       <h2 className="card-title">{item.title}</h2>
@@ -56,12 +61,12 @@ const Assignments = () => {
                             <p>Difficulty : {item.difficulty}</p>
                       </div>
                       <div className="card-actions justify-between">
-                        <button onClick={()=>handleDelete(item.email)} className="btn bg-red-500 px-8">Delete</button>
+                        <button onClick={()=>handleDelete(item.email)} className="btn bg-red-500 px-12">Delete</button>
                        <Link to={`/update/${item._id}`}>
-                       <button className="btn bg-green-500 px-8">Update</button>
+                       <button className="btn bg-green-500 px-12">Update</button>
                        </Link>
                       </div>
-                      <button className="btn bg-orange-400 ">view</button>
+                     <Link to={`/viewDetails/${item._id}`}> <button className="btn w-full bg-orange-400 ">view</button></Link>
                     </div>
                   </div>
                        </>

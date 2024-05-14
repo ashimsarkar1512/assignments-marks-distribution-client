@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 const PendingAssignment = () => {
@@ -14,7 +15,7 @@ const PendingAssignment = () => {
         })
 
             return (
-                        <div className="mx-auto max-w-6xl my-10">
+                        <div className="mx-auto max-w-5xl my-10">
                         <div className="overflow-x-auto">
         <table className="table ">
         {/* head */}
@@ -23,9 +24,9 @@ const PendingAssignment = () => {
         
         <th>Title</th>
         <th>Mark</th>
-        <th>Status</th>
-        <th>Obtain Mark</th>
-        <th>Feedback</th>
+        <th>examinee name</th>
+        <th>button</th>
+        
         
         </tr>
         </thead>
@@ -36,8 +37,8 @@ const PendingAssignment = () => {
         
                         <td>{item.submit_title}</td>
                         <td>{item.total_mark}</td>
-                        <td>{item.status}</td>
-                        
+                        <td>{item.submit_name}</td>
+                          <Link to={`/giveMark/${item.submit_email}`}><td><button>Give Mark</button></td></Link>                        
                         
                         
                         </tr>)

@@ -12,6 +12,7 @@ import ViewDetails from "../Pages/ViewDetails/ViewDetails";
 import TakeAssignment from "../Pages/TakeAssignment/TakeAssignment";
 import MyAttempted from "../Pages/MyAttempt/MyAttempted";
 import PendingAssignment from "../Pages/PendingAssignment/PendingAssignment";
+import GiveMark from "../Pages/GiveMark/GiveMark";
 
 const router = createBrowserRouter([
             {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
                         {
                           path:'/pending',
                           element:<PrivateRoute><PendingAssignment></PendingAssignment></PrivateRoute>
+                        },
+                        {
+                          path:'/giveMark/:email',
+                          element:<PrivateRoute><GiveMark></GiveMark></PrivateRoute>
                         }
 
               ]

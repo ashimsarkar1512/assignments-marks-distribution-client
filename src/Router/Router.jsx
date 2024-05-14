@@ -11,6 +11,7 @@ import Update from "../Pages/Update/Update";
 import ViewDetails from "../Pages/ViewDetails/ViewDetails";
 import TakeAssignment from "../Pages/TakeAssignment/TakeAssignment";
 import MyAttempted from "../Pages/MyAttempt/MyAttempted";
+import PendingAssignment from "../Pages/PendingAssignment/PendingAssignment";
 
 const router = createBrowserRouter([
             {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
                         {
                           path:'/myAttempted',
                           element:<PrivateRoute><MyAttempted></MyAttempted></PrivateRoute>
+                        },
+                        {
+                          path:'/pending',
+                          element:<PrivateRoute><PendingAssignment></PendingAssignment></PrivateRoute>
                         }
 
               ]

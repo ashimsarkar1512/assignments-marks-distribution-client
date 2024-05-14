@@ -60,7 +60,7 @@ const Login = () => {
             setSuccess(toast.success("login successfully "))
             setTimeout(()=>{
               navigate(location?.state? location.state:'/')
-            },3000);
+            },2000);
           }
         
         })

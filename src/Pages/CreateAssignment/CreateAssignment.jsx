@@ -21,12 +21,21 @@ const CreateAssignment = () => {
             const title=form.title.value;
             const mark=form.mark.value;
             const difficulty=form.difficulty.value;
-            const date=form.date.value;
+            const date=startDate;
             const image=form.image.value;
             const Description=form.Description.value;
             const email=form.email.value;
+            
+            const create_Name=user?.displayName;
+            const create_Photo=user?.photoURL;
+            
 
-            const addAssignment={title,mark,difficulty,date,image,Description,email}
+            const addAssignment={title,mark,difficulty,date,image,Description,email, created:{
+                email,
+                create_Name,
+                create_Photo
+ 
+             },}
             console.log(addAssignment);
 
 
@@ -103,7 +112,7 @@ const CreateAssignment = () => {
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input className="input input-bordered"  defaultValue={user?.email} type="email" name="email" placeholder="Email" id="" />
+                                    <input className="input input-bordered" defaultValue={user?.email}  type="email" name="email" placeholder="Email" id="" />
                                 </div>
 
                                 <div className="form-control ">

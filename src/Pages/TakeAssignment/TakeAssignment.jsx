@@ -4,13 +4,21 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 
+
+
+
 const TakeAssignment = () => {
               
     const{user}=useContext(AuthContext)
     const service=useLoaderData()
-    const{title,mark,difficulty,date,image,Description,email}=service
+    const{title,mark,Description,created}=service
     const handleSubmit=e=>{
+      
         e.preventDefault();
+
+        //   if(user?.email===submit_email) return toast.error('Action not permitted')
+           
+
         const form=e.target;
         const pdf=form.pdf.value;
         const textarea=form.text.value;
@@ -18,7 +26,7 @@ const TakeAssignment = () => {
         const submit_title=title;
         const submit_email=user?.email;
         const submit_name=user?.displayName
-        const create_email=email;
+       
         const status="pending"
 
        const submitData={
@@ -27,9 +35,10 @@ const TakeAssignment = () => {
         total_mark,
         submit_email,
         submit_name,
-        create_email,
+      
         status,
-        submit_title
+        submit_title,
+        created,
 
        }
        console.log(submitData)
@@ -75,18 +84,21 @@ const TakeAssignment = () => {
                       {Description}
                     </p>
                     <p className='mt-6 text-sm font-bold text-gray-600 '>
-                     
+                     created details
                     </p>
                     <div className='flex items-center gap-5'>
                       <div>
-                        <p className='mt-2 text-sm  text-gray-600 '>Name: Jhankar Vai.</p>
+                        
                         <p className='mt-2 text-sm  text-gray-600 '>
-                          Email: jhankar@mahbub.com
+                          Name: {created?.create_Name}
+                        </p>
+                        <p className='mt-2 text-sm  text-gray-600 '>
+                          Email: {created?.email}
                         </p>
                       </div>
                       <div className='rounded-full object-cover overflow-hidden w-14 h-14'>
-                      
-                      </div>
+                        <img src={created?.create_Photo} alt='' />
+                     </div>
                     </div>
                    
                   </div>
@@ -123,6 +135,7 @@ const TakeAssignment = () => {
                     </div>
                   </form>
                 </section>
+              
               </div>
             );
 };

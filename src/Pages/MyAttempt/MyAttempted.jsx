@@ -7,14 +7,13 @@ const MyAttempted = () => {
         const {user}=useContext(AuthContext)
         const[attempted,setAttempted]=useState([]);
 
-        fetch(`http://localhost:5000/myAssignment/${user?.email}`)
+        fetch(`http://localhost:5000/mysubmit/${user?.email}`)
         .then(res=>res.json())
         .then(data=>{
                 setAttempted(data)
         })
 
        
-        
             return (
                 <div className="mx-auto max-w-6xl my-10">
                 <div className="overflow-x-auto">
@@ -36,8 +35,9 @@ const MyAttempted = () => {
 {
         attempted.map(item=><tr key={item._id} >
 
-                <td>{item.title}</td>
-                <td>{item.mark}</td>
+                <td>{item.submit_title}</td>
+                <td>{item.total_mark}</td>
+                <td>{item.status}</td>
                 
                 
                 

@@ -1,8 +1,14 @@
-# React + Vite
+website name:Assignment experts
+live Link:assignments-mark-distribution.web.app
+Featured and characteristics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+*  At first user can see the home page in this website.
 
-Currently, two official plugins are available:
+*  Then user click the the navbar login button and he/she could see the     login page form end at the page have to register button then user click this write the register then open the register page and create the account in register page .
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* User will go the login page and use to right email,password or google a will login then will see the success toast massage.
+
+*  without hopepage other page is private so anyone can not see this all featured
+
+
+*user create the assignment only assingment creator mark this exeminar

@@ -52,7 +52,7 @@ const Update = () => {
   
   
             return (
-                        <div className="container mx-auto px-16">
+                        <div className="container mx-auto px-16 mt-5">
                         <h2 className='text-center text-3xl'>Update</h2>
                         <form onSubmit={handleUpdate}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

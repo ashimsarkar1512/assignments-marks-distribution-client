@@ -15,7 +15,7 @@ const PendingAssignment = () => {
         })
 
             return (
-                        <div className="mx-auto max-w-5xl my-10">
+                        <div className="mx-auto max-w-5xl my-10 mb-20">
                         <div className="overflow-x-auto">
         <table className="table ">
         {/* head */}

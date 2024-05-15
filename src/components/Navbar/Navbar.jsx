@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
-
+import img1 from '../../assets/images (8).jpg'
 const Navbar = () => {
 
             const {user,logOut}=useContext(AuthContext)
@@ -55,7 +55,7 @@ const Navbar = () => {
     </div>
     
    <div>
- <h2 className="text-2xl font-bold">Task</h2>
+   <img className="h-20 rounded-2xl" src={img1} alt="" />
   
    </div>
    

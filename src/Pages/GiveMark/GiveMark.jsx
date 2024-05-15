@@ -5,7 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const GiveMark = () => {
             const {user}=useContext(AuthContext)
         const[pending,setPending]=useState([]);
-         
+       
          
         fetch(`http://localhost:5000/pending/${user?.email}`)
         .then(res=>res.json())

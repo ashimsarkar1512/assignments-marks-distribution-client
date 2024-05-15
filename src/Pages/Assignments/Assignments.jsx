@@ -66,7 +66,7 @@ const Assignments = () => {
 <div>
 
        
-           <div className="form-control container mx-auto max-w-xl mb-6">
+           <div className="form-control container mx-auto max-w-xl mb-6 mt-6">
               <label className="label">
                   <span className="label-text">Difficulty</span>
               </label>

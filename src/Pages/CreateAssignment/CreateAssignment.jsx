@@ -67,7 +67,7 @@ const CreateAssignment = () => {
 
             return (
  
-                        <div className="container mx-auto px-16">
+                        <div className="container mx-auto px-16 mt-6">
                         <h2 className='text-center text-3xl'>Create Assignment</h2>
                         <form onSubmit={handleCreateAssignment}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

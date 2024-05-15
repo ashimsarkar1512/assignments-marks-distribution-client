@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndP
 import { createContext, useEffect, useState } from "react";
 import auth from "../Firebase/firebase.config";
 import { GoogleAuthProvider } from "firebase/auth";
+import axios from "axios";
 
 export const AuthContext= createContext(null)
 
@@ -46,6 +47,13 @@ const AuthProvider = ({children}) => {
                              console.log('user in the on state chance',currentUser);
                              setUser(currentUser)
                              setLoading(false)
+                             if(currentUser){
+                              const loggedUser={email:currentUser.email}
+                              axios.post('http://localhost:5000/jwt',loggedUser,{withCredentials:true})
+                              .then(res=>{
+                                 console.log(res.data);
+                              })
+                             }
                           })
                           return()=>{
                              unSubscribe();

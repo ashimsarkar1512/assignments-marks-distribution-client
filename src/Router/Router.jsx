@@ -39,7 +39,7 @@ const router = createBrowserRouter([
                         {
                           path:'/assignment',
                           element:<Assignments></Assignments>,
-                          loader:()=>fetch('http://localhost:5000/assignment')
+                          // loader:()=>fetch('http://localhost:5000/assignment')
                           
                         },
                         {
@@ -67,7 +67,9 @@ const router = createBrowserRouter([
                         },
                         {
                           path:'/giveMark/:email',
-                          element:<PrivateRoute><GiveMark></GiveMark></PrivateRoute>
+                          element:<PrivateRoute><GiveMark></GiveMark></PrivateRoute>,
+                       
+                        
                         }
 
               ]

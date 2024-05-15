@@ -1,14 +1,26 @@
-import { useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+
+import { useEffect, useState } from "react";
+import { Link,  } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const Assignments = () => {
 
        
-       const allAssignments=useLoaderData()
-       const [items,setItems]=useState(allAssignments)
+       // const allAssignments=useLoaderData()
+       const [allAssignments,setAllAssignment]=useState([])
+       const [items,setItems]=useState()
 
+       const[filter,setFilter]=useState('');
+       console.log(filter);
+       
+       useEffect(()=>{
+             fetch(`http://localhost:5000/assignment?filter=${filter}`)
+             .then(res=>res.json())
+             .then(data=>setAllAssignment(data))
+       },
+       [filter])
+       
        const handleDelete=(email)=>{
               console.log('delete',email);
 
@@ -49,10 +61,36 @@ const Assignments = () => {
                 }
        
             return (
+
+
+<div>
+
+       
+           <div className="form-control container mx-auto max-w-xl mb-6">
+              <label className="label">
+                  <span className="label-text">Difficulty</span>
+              </label>
+                <select onChange={e=>{
+                    setFilter(e.target.value)
+                }}
+                value={filter}
+                
+                className="select select-bordered w-full " placeholder="difficulty" 
+                name="difficulty" id="" >
+                    
+                <option disabled selected>Difficulty</option>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+         
+      </select>
+          </div>
                         <div className=" container mx-auto px-6 grid lg:grid-cols-3 gap-5">
+
+
                                 
-                               {
-                    allAssignments.map(item => <> <div key={item._id} className="card bg-base-100 shadow-xl">
+                  {
+                    allAssignments?.map(item => <> <div key={item._id} className="card bg-base-100 shadow-xl">
                     <figure><img src={item.image} alt="Shoes" /></figure>
                     <div className="card-body">
                       <h2 className="card-title">{item.title}</h2>
@@ -73,6 +111,7 @@ const Assignments = () => {
                     )
                 }
                         </div>
+</div>
             );
 };
 

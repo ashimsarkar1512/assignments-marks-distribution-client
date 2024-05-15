@@ -5,14 +5,22 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const GiveMark = () => {
             const {user}=useContext(AuthContext)
         const[pending,setPending]=useState([]);
-
+         
+         
         fetch(`http://localhost:5000/pending/${user?.email}`)
         .then(res=>res.json())
         .then(data=>{
                 setPending(data)
         })
+           const handleMark=e=>{
+             e.preventDefault()
+             const form=e.target;
+             const obtain_mark=form.mark.value;
+             const feedback=form.feedback.value;
 
-        console.log(pending)
+
+           }
+       
 
             return (
                         <div className='flex flex-col md:flex-row justify-around gap-5  items-center min-h-[calc(100vh-306px)] md:max-w-screen-xl mx-auto '>
@@ -38,7 +46,7 @@ const GiveMark = () => {
                         <section className='p-6 w-full  bg-white rounded-md shadow-md flex-1 md:min-h-[350px]'>
                           
                   
-                          <form >
+                          <form  onSubmit={handleMark}>
                             <div className='grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2'>
                             <div className="form-control">
                                             <label className="label">

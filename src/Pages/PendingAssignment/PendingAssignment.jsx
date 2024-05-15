@@ -8,7 +8,7 @@ const PendingAssignment = () => {
             const {user}=useContext(AuthContext)
         const[pending,setPending]=useState([]);
 
-        fetch(`http://localhost:5000/pending/${user?.email}`)
+        fetch(`https://assignments-mark-distribution-server.vercel.app/pending/${user?.email}`)
         .then(res=>res.json())
         .then(data=>{
                 setPending(data)

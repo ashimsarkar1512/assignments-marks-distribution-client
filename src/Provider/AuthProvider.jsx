@@ -45,15 +45,25 @@ const AuthProvider = ({children}) => {
                        useEffect(()=>{
                         const unSubscribe =  onAuthStateChanged(auth,currentUser=>{
                              console.log('user in the on state chance',currentUser);
+                             const userEmail=currentUser?.email||user?.email
+                             const loggedUser={email:userEmail}
                              setUser(currentUser)
                              setLoading(false)
                              if(currentUser){
-                              const loggedUser={email:currentUser.email}
-                              axios.post('http://localhost:5000/jwt',loggedUser,{withCredentials:true})
+                              
+                              axios.post('https://assignments-mark-distribution-server.vercel.app/jwt',loggedUser,{withCredentials:true})
                               .then(res=>{
                                  console.log(res.data);
                               })
                              }
+
+                             else{
+                              axios.post('https://assignments-mark-distribution-server.vercel.app/logout',loggedUser,{withCredentials:true})
+                              .then(res=>{
+                                 console.log(res.data);
+                              })
+                             }
+
                           })
                           return()=>{
                              unSubscribe();

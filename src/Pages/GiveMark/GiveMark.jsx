@@ -7,17 +7,14 @@ const GiveMark = () => {
         const[pending,setPending]=useState([]);
        
          
-        fetch(`http://localhost:5000/pending/${user?.email}`)
+        fetch(`https://assignments-mark-distribution-server.vercel.app/pending/${user?.email}`)
         .then(res=>res.json())
         .then(data=>{
                 setPending(data)
         })
            const handleMark=e=>{
              e.preventDefault()
-             const form=e.target;
-             const obtain_mark=form.mark.value;
-             const feedback=form.feedback.value;
-
+            
 
            }
        

@@ -7,7 +7,7 @@ const MyAttempted = () => {
         const {user}=useContext(AuthContext)
         const[attempted,setAttempted]=useState([]);
 
-        fetch(`http://localhost:5000/mysubmit/${user?.email}`)
+        fetch(`https://assignments-mark-distribution-server.vercel.app/mysubmit/${user?.email}`)
         .then(res=>res.json())
         .then(data=>{
                 setAttempted(data)

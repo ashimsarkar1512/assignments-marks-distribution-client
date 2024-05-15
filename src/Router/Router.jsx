@@ -39,23 +39,23 @@ const router = createBrowserRouter([
                         {
                           path:'/assignment',
                           element:<Assignments></Assignments>,
-                          // loader:()=>fetch('http://localhost:5000/assignment')
+                          // loader:()=>fetch('https://assignments-mark-distribution-server.vercel.app/assignment')
                           
                         },
                         {
                           path:'/update/:id',
                           element:<Update></Update>,
-                          loader:({params})=>fetch(`http://localhost:5000/assignment/${params.id}`)
+                          loader:({params})=>fetch(`https://assignments-mark-distribution-server.vercel.app/assignment/${params.id}`)
                         },
                         {
                           path:"/viewDetails/:id",
                           element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-                          loader:()=>fetch('http://localhost:5000/assignment')
+                          loader:()=>fetch('https://assignments-mark-distribution-server.vercel.app/assignment')
                         },
                         {
                           path:'/takeAssignment/:id',
                           element:<TakeAssignment></TakeAssignment>,
-                          loader:({params})=>fetch(`http://localhost:5000/assignment/${params.id}`)
+                          loader:({params})=>fetch(`https://assignments-mark-distribution-server.vercel.app/assignment/${params.id}`)
                         },
                         {
                           path:'/myAttempted',

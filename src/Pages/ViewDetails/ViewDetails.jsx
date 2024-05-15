@@ -18,7 +18,7 @@ const ViewDetails = () => {
       const{title,mark,difficulty,date,_id}=details
 
             return (
-                        <div className="mx-auto max-w-6xl my-10">
+                        <div className="mx-auto max-w-6xl my-10 ">
                                 <div className="overflow-x-auto">
   <table className="table ">
     {/* head */}

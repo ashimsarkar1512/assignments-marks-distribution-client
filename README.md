@@ -6,7 +6,14 @@ live Link : assignments-mark-distribution.web.app
 server-Link:https://github.com/ashimsarkar1512/assignments-marks-distribution-server
 
 <br/>
+
+Overview:
+<br/>
+Users initially see the home page and can navigate to the login page via the navbar. From the login page, they can access the registration page, create an account, and log in to see a success toast message. All other pages are private, accessible only after login, and users can create assignments, with only the creator able to mark the examiner.
+
+
 Featured and characteristics:
+
 
 *  At first user can see the home page in this website.
 
